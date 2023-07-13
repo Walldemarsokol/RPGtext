@@ -24,9 +24,3 @@ def random_class():  # создает рандомный класс
         print('<вам достался класс разбойник>')
         print('-' * 80)
         return rouge()
-    # else:
-    #     print('-' * 80)
-    #     print('<вам достался класс клирик>')
-    #     print('-' * 80)
-    #
-    #     return cleric()

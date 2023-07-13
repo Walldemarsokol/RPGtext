@@ -7,9 +7,10 @@ def load_game():
 
 
 def new_game():
-    class_choise()
-    menu_choose_race()
-    write_character(menu_choose_race())
+    race = menu_choose_race()
+    list = class_choise()
+    list.append(race)
+    return list
 
 
 

@@ -5,64 +5,6 @@ from game_over import game_over_loose
 from write_function import *
 from random_func import *
 
-def choise_race():
-    print(">Выберите рассу:\n"
-          "нажмите 1 (человек)\n"
-          "нажмите 2 (эльф)\n"
-          "нажмите 3 (орк)\n"
-          "нажмите 4 (гном)\n")
-    data = input('enter: ')
-    if data == "1":
-        print('-' * 80)
-        print('В отражении вы видите лицо человека.')
-        print('-' * 80)
-        return human_race()
-    elif data == "2":
-        print('-' * 80)
-        print('В отражении вы видите лицо эльфа.')
-        print('-' * 80)
-        return elf_race()
-    elif data == "3":
-        print('-' * 80)
-        print('В отражении вы видите лицо орка.')
-        print('-' * 80)
-        return orc_race()
-    elif data == "4":
-        print('-' * 80)
-        print('В отражении вы видите лицо гнома.')
-        print('-' * 80)
-        return dwarf_race()
-
-
-def class_choise():  # метод выбор класса
-    print(">Выберите класс:\n"
-          "нажмите 1 (воин)\n"
-          "нажмите 2 (маг)\n"
-          "нажмите 3 (разбойник)\n"
-          "нажмите любую клавишу, если неважно (random)")
-    data = input('enter: ')
-    if data == '1':
-        print('-' * 80)
-        print('Вы выбрали класс воин!')
-        print('-' * 80)
-        return warrior()
-    elif data == '2':
-        print('-' * 80)
-        print('Вы выбрали класс маг!')
-        print('-' * 80)
-        return mage()
-    elif data == '3':
-        print('-' * 80)
-        print('Вы выбрали класс разбойник!')
-        print('-' * 80)
-        return rouge()
-    # elif data == '4':
-    #     print('-' * 80)
-    #     print('Вы выбрали класс клирик!')
-    #     print('-' * 80)
-    #     return cleric()
-    else:
-        return random_class()
 
 
 def choise_1(list): # начальное действие в пещере
@@ -122,12 +64,12 @@ def location_cave():
     # print('>Добравшись до светлой части пещеры вы на полу находите лужу.\n>Вы пытаетесь наклониться к ней.')
     # sleep(3)
     # print('>В луже Вы можете увидеть свое отражение.')
-    player_race = choise_race() # выбор рассы
+    # player_race = choise_race() # выбор рассы
     sleep(2)
     print('>Кажется вы понимаете,что на вас надето. Судя по экипировке Вы...')
-    player_class = class_choise()# выбор класса
+    # player_class = class_choise()# выбор класса
     sleep(2)
-    create_char_string(player_class,player_race)
+    # create_char_string(player_class,player_race)
     print('>Однако оружия у вас не найдено...')
     sleep(3)
     print('>Наверное его потеряли при нападении...или что это было. Не понятно...')
@@ -140,5 +82,5 @@ def location_cave():
     sleep(5)
     print(">В одном из направлений Вам кажется,что холод сильнее.\n"
           "Видимо сквозняк доносится оттуда.")
-    choise_1(player_class)
+    # choise_1(player_class)
 
