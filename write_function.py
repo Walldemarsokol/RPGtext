@@ -1,21 +1,23 @@
 
 
 
-def write_weapon(char_class):# функция из принимаемого списка забирает
-    weapon = ''
+def add_weapon(char_class):# функция из принимаемого списка забирает
+    # weapons = { 'warrior' :'Короткий меч',}
     if 'warrior' in char_class:
         weapon = 'Короткий меч'
-        print('Вы нашли короткий меч')
+        print(f'Вы нашли {weapon}')
+        char_class.append(weapon)
+        return char_class
     elif 'mage' in char_class:
         weapon = 'Палочка мага'
-        print('Вы нашли палочку мага')
+        print(f'Вы нашли {weapon}')
+        char_class.append(weapon)
+        return char_class
+
     elif 'rouge' in char_class:
         weapon = 'Кинжал разбойника'
-        print('Вы нашли кинжал разбойника')
-    else:
-        weapon = 'Жезл клирика'
-        print('Вы нашли жезл клирика')
+        print(f'Вы нашли {weapon}')
+        char_class.append(weapon)
+        return char_class
 
 
-    with open('weapon.txt','w',encoding= 'utf8') as text_weapon:
-        text_weapon.write(weapon)

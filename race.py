@@ -29,3 +29,6 @@ def menu_choose_race():
         return orc_race()
     elif data == "4":
         return dwarf_race()
+    else:
+        print("Неверное значение!")
+        return menu_choose_race()

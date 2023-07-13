@@ -5,8 +5,11 @@ from intro import greetings
 from path import path_on_road
 from chapter_1 import *
 
-# greetings()
-char_class = main_menu()
-print(char_class)
-#
-# location_cave()
+
+def start_game():
+    # greetings()
+    char_class = main_menu()
+    location_cave(char_class)
+    print(char_class)
+
+start_game()
