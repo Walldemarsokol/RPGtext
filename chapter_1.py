@@ -13,7 +13,7 @@ def choise_1(list): # начальное действие в пещере
     if data == "1":
         choose_1_1()
         sleep(3)
-        add_weapon(list)
+        start_add_weapon(list)
         print('>Больше здесь делать нечего. Вы возвращаетесь к лучу света.')
         return choise_1_2(list)
     elif data == "2":

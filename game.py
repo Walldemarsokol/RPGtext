@@ -10,6 +10,6 @@ def start_game():
     # greetings()
     char_class = main_menu()
     location_cave(char_class)
-    print(char_class)
+    return char_class
 
-start_game()
+result_1 = start_game()
