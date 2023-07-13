@@ -1,5 +1,5 @@
 from classes import *
-from random import randint
+from random import *
 
 
 def random_choice(a, b):
@@ -8,7 +8,7 @@ def random_choice(a, b):
 
 
 def random_class():  # создает рандомный класс
-    rand = random.randint(1, 4)
+    rand = randint(1, 4)
     if rand == 1:
         print('-' * 80)
         print('<вам достался класс воин>')
@@ -24,9 +24,9 @@ def random_class():  # создает рандомный класс
         print('<вам достался класс разбойник>')
         print('-' * 80)
         return rouge()
-    else:
-        print('-' * 80)
-        print('<вам достался класс клирик>')
-        print('-' * 80)
-
-        return cleric()
+    # else:
+    #     print('-' * 80)
+    #     print('<вам достался класс клирик>')
+    #     print('-' * 80)
+    #
+    #     return cleric()

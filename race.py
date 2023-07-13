@@ -16,25 +16,16 @@ def dwarf_race():
     dwarf = 'Dwarf'
     return dwarf
 
-def random_race(): # рандомный выбор рассы
-    rand = random.randint(1,4)
-    if rand == 1:
-        print('-'*80)
-        print('<Вам досталась расса человек>')
-        print('-' * 80)
+def menu_choose_race():
+    print(">Выберите рассу:\n"
+          "<человек> <эльф> <орк> <гном>)\n"
+          "   (1)     (2)    (3)    (4)\n")
+    data = input('Enter num: ')
+    if data == "1":
         return human_race()
-    elif rand == 2:
-        print('-' * 80)
-        print('<Вам досталась расса эльф>')
-        print('-' * 80)
+    elif data == "2":
         return elf_race()
-    elif rand == 3:
-        print('-' * 80)
-        print('<Вам досталась расса орк>')
-        print('-' * 80)
+    elif data == "3":
         return orc_race()
-    else:
-        print('-' * 80)
-        print('<Вам досталась расса гном>')
-        print('-' * 80)
+    elif data == "4":
         return dwarf_race()

@@ -21,9 +21,9 @@ def write_weapon(char_class):# функция из принимаемого сп
         text_weapon.write(weapon)
 
 
-def write_character():
+def write_character(data):
     with open('char.txt', 'w', encoding='utf-8') as char:
-        char.write()
+        char.write(data)
 
 def create_char_string(char_class,char_race):# нужен для создания текста, который запишу в char.txt вайле
     char_class.append(char_race)
