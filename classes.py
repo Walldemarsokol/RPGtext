@@ -30,12 +30,13 @@ def warrior():
     str = 10 # сила
     dex = 3 # ловкость
     endr = 5 #выносливость
-    intel = 2 #интеллекс
-    attack = 1 # множитель
+    intel = 2 #интеллект
+    attack = 1 # показатель атаки
     defence = 0.5 # множитель
     armor = 1
     status_list = ['warrior', hp * endr, mp * intel, ap * dex, str, dex, endr,
-                   intel, attack * str,defence * endr + armor]  # class, HP,MP,AP strength,dexterity,endurance,intelligence
+                   intel, attack * str,defence * endr + armor]
+    # class, HP,MP,AP strength,dexterity,endurance,intelligence
     return status_list
 
 
@@ -46,12 +47,13 @@ def mage():
     str = 10  # сила
     dex = 3  # ловкость
     endr = 5  # выносливость
-    intel = 10  # интеллекс
-    attack = 1 # множитель
+    intel = 10  # интеллект
+    attack = 1 # показатель атаки
     defence = 0.5 # множитель
     armor = 1
     status_list = ['mage', hp * endr, mp * intel, ap * dex, str, dex, endr,
-                   intel,attack * str,defence * endr + armor]  # class, HP,MP,AP strength,dexterity,endurance,intelligence
+                   intel,attack * str,defence * endr + armor]
+    # class, HP,MP,AP strength,dexterity,endurance,intelligence
     return status_list
 
 
@@ -62,25 +64,11 @@ def rouge():
     str = 3  # сила
     dex = 10  # ловкость
     endr = 3  # выносливость
-    intel = 4  # интеллекс
-    attack = 1 # множитель
+    intel = 4  # интеллект
+    attack = 1 # показатель атаки
     defence = 0.5 # множитель
     armor = 1
     status_list = ['rouge', hp * endr, mp * intel, ap * dex, str, dex, endr,
-                   intel,attack * str,defence * endr + armor]  # class, HP,MP,AP strength,dexterity,endurance,intelligence
+                   intel,attack * str,defence * endr + armor]
+    # class, HP,MP,AP strength,dexterity,endurance,intelligence
     return status_list
-
-
-# def cleric():
-#     hp = 20  # множитель
-#     mp = 10  # множитель
-#     ap = 3  # множитель
-#     str = 10  # сила
-#     dex = 3  # ловкость
-#     endr = 5  # выносливость
-#     intel = 2  # интеллекс
-#     status_list = ['cleric', hp * endr, mp * intel, ap * dex, str, dex, endr,
-#                    intel]  # class, HP,MP,AP strength,dexterity,endurance,intelligence
-#     return status_list
-
-

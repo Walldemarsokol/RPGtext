@@ -75,3 +75,16 @@ def start_add_weapon(char_class):# функция из принимаемого 
         print(f'Вы нашли <{weapon}>')
         char_class.append(weapon)
         return char_class
+
+def cleric():
+    hp = 20  # множитель
+    mp = 10  # множитель
+    ap = 3  # множитель
+    str = 10  # сила
+    dex = 3  # ловкость
+    endr = 5  # выносливость
+    intel = 2  # интеллекс
+    status_list = ['cleric', hp * endr, mp * intel, ap * dex, str, dex, endr,
+                    intel]
+    # class, HP,MP,AP strength,dexterity,endurance,intelligence
+    return status_list
