@@ -9,7 +9,7 @@ def orc_race():
     return orc
 
 def elf_race():
-    elf = 'elf'
+    elf = 'Elf'
     return elf
 
 def dwarf_race():
@@ -17,10 +17,7 @@ def dwarf_race():
     return dwarf
 
 def menu_choose_race():
-    print(">Выберите рассу:\n"
-          "<человек> <эльф> <орк> <гном>)\n"
-          "   (1)     (2)    (3)    (4)\n")
-    data = input('Enter num: ')
+    data = input(">Выберите рассу:\n<человек> <эльф> <орк> <гном>)\n   (1)     (2)    (3)    (4)\n Enter num: ")
     if data == "1":
         return human_race()
     elif data == "2":

@@ -1,7 +1,15 @@
 
 
+loot = {}
 
 
-def tonels():
+def tonels(data):
     pass
+
+
+
+def second_location(data):
+    tonels(data)
+
+
 
