@@ -7,15 +7,16 @@ def load_game():
 
 def new_game():
     race = menu_choose_race()
-    list = class_choise()
-    list.append(race)
-    return list
+    dict = class_choise()
+    dict['race'] = race
+    print(dict)
+    return dict
 
 
 
 def main_menu():
     print('-' * 100)
-    print('You are in main menu')
+    print('<<<<<You are in main menu>>>>>')
     print('-' * 100)
     data = input('<New game> <Load game>\n'
                  '    (1)        (2) \n '

@@ -1,74 +1,103 @@
 from random import *
 
+
 def class_choise():  # метод выбор класса
     data = input("Выберите свой класс!\n"
                  "<Воин>  <Маг>  <Вор> \n"
                  " (1)     (2)    (3)  \n"
                  "Enter number: ")
     if data == '1':
-        return warrior()
+        print('Здоровье = 100\n''Мана = 20\n''Очки действий = 3\n''Сила = 10\n''Ловкость = 3\n''Выносливость = 5\n'
+              'Интеллект = 2\n''базовая атака = 10\n''Базовая защита = 5\n''\n')
+        print('Вы хотите выбрать воина?\n''<<Yes(1)>>  <<No(2)>>')
+        res = input('Enter number: ')
+        if res == '1':
+            return warrior()
+        elif res == '2':
+            return class_choise()
+        else:
+            print('Неверный ввод. Выберите класс героя.')
+            return class_choise()
     elif data == '2':
         return mage()
     elif data == '3':
         return rouge()
     else:
-        data = randint(1,4)
-        if data == 1:
-            return warrior()
-        elif data == 2:
-            return mage()
-        else:
-            return rouge()
+        print('Неверно. Введите корректный номер.')
+        return class_choise()
+        # data = randint(1,4)
+        # if data == 1:
+        #     return warrior()
+        # elif data == 2:
+        #     return mage()
+        # else:
+        #     return rouge()
 
+
+
+def status_calc(list_1,list_2,dict,):
+    count = 0
+    for element in range(len(list_1)):
+        dict[list_2[element]] = list_1[count]
+        count+=1
+    return dict
 
 
 
 def warrior():
-    hp = 20  # множитель
-    mp = 10  # множитель
-    ap = 3  # множитель
+    health_points = 20  # очки здоровья
+    mana_points = 10  # очки магии
+    action_points = 1  # очки действий
     str = 10 # сила
     dex = 3 # ловкость
     endr = 5 #выносливость
     intel = 2 #интеллект
     attack = 1 # показатель атаки
-    defence = 0.5 # множитель
     armor = 1
-    status_list = ['warrior', hp * endr, mp * intel, ap * dex, str, dex, endr,
-                   intel, attack * str,defence * endr + armor]
+    status_dict = {'class':'warrior',}
+    status_list = [ health_points * endr, mana_points * intel,action_points * dex, str, dex, endr,
+                   intel, attack * str, endr * armor]
+    status_char = ['health_points', 'mana_points', 'action_points', 'str', 'dex', 'endr', 'intel','attack','armor' ]
+    status_dict=status_calc(status_list,status_char,status_dict)
+
     # class, HP,MP,AP strength,dexterity,endurance,intelligence
-    return status_list
+    return status_dict
 
 
 def mage():
-    hp = 20  # множитель
-    mp = 10  # множитель
-    ap = 3  # множитель
-    str = 10  # сила
-    dex = 3  # ловкость
-    endr = 5  # выносливость
+    health_points = 20  # очки здоровья
+    mana_points = 10  # очки магии
+    action_points = 1  # очки действий
+    str = 2  # сила
+    dex = 4  # ловкость
+    endr = 4  # выносливость
     intel = 10  # интеллект
     attack = 1 # показатель атаки
-    defence = 0.5 # множитель
     armor = 1
-    status_list = ['mage', hp * endr, mp * intel, ap * dex, str, dex, endr,
-                   intel,attack * str,defence * endr + armor]
+    status_dict = {'class':'mage'}
+    status_list = [health_points * endr, mana_points * intel, action_points * dex, str, dex, endr,
+                   intel, attack * intel, endr * armor]
+    status_char = ['health_points', 'mana_points', 'action_points', 'str', 'dex', 'endr', 'intel','attack','armor' ]
+    status_calc(status_list,status_char,status_dict)
     # class, HP,MP,AP strength,dexterity,endurance,intelligence
     return status_list
 
 
 def rouge():
-    hp = 20  # множитель
-    mp = 10  # множитель
-    ap = 3  # множитель
+    char_class = 'rouge'
+    health_points = 20  # очки здоровья
+    mana_points = 10  # очки магии
+    action_points = 1  # очки действий
     str = 3  # сила
     dex = 10  # ловкость
     endr = 3  # выносливость
     intel = 4  # интеллект
     attack = 1 # показатель атаки
-    defence = 0.5 # множитель
     armor = 1
-    status_list = ['rouge', hp * endr, mp * intel, ap * dex, str, dex, endr,
-                   intel,attack * str,defence * endr + armor]
+    status_dict = {}
+    status_list = [health_points * endr, mana_points * intel, action_points * dex, str, dex, endr,
+                   intel, attack * str, endr * armor]
+    status_char = ['health_points', 'mana_points', 'action_points', 'str', 'dex', 'endr', 'intel','attack','armor' ]
+    status_calc(status_list, status_char, status_dict)
     # class, HP,MP,AP strength,dexterity,endurance,intelligence
     return status_list

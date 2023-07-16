@@ -1,9 +1,10 @@
 
-def start_add_weapon(char_class):# функция из принимаемого списка забирает
+def start_add_weapon(out_dict):# функция из принимаемого списка забирает
     weapons = { 'warrior':'Короткий меч','mage':'Палочка мага','rouge':'Кинжал разбойника'}
-    for key in char_class:
-        if key =='warrior' or key == 'mage' or key == 'rouge':
-            weapon = weapons.get(key)
-            print(f'Вы нашли <{weapon}>')
-            char_class.append(weapon)
-            return char_class
+    # for key in out_dict:
+    res = out_dict.get('class')
+    if res =='warrior' or res == 'mage' or res== 'rouge':
+        weapon = weapons.get(res)
+        print(f'Вы нашли <{weapon}>')
+        out_dict['weapon'] = weapon
+        return out_dict
