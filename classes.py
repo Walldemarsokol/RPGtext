@@ -6,9 +6,14 @@ def class_choise():  # метод выбор класса
                  "<Воин>  <Маг>  <Вор> \n"
                  " (1)     (2)    (3)  \n"
                  "Enter number: ")
+    print('-'*25)
     if data == '1':
-        print('Здоровье = 100\n''Мана = 20\n''Очки действий = 3\n''Сила = 10\n''Ловкость = 3\n''Выносливость = 5\n'
-              'Интеллект = 2\n''базовая атака = 10\n''Базовая защита = 5\n''\n')
+        dict = warrior()
+        parameters = ['Здоровье','Мана','Очки действий','Сила','Ловкость','Выносливость','Интеллект','Базовая атака','Базовая защита']
+        values = ['health_points', 'mana_points', 'action_points', 'str', 'dex', 'endr', 'intel','attack','armor' ]
+        for i in range(len(parameters)):
+            print(f'>>{parameters[i]} = {dict.get(values[i])}')
+        print('_'*25)
         print('Вы хотите выбрать воина?\n''<<Yes(1)>>  <<No(2)>>')
         res = input('Enter number: ')
         if res == '1':
@@ -25,14 +30,6 @@ def class_choise():  # метод выбор класса
     else:
         print('Неверно. Введите корректный номер.')
         return class_choise()
-        # data = randint(1,4)
-        # if data == 1:
-        #     return warrior()
-        # elif data == 2:
-        #     return mage()
-        # else:
-        #     return rouge()
-
 
 
 def status_calc(list_1,list_2,dict,):

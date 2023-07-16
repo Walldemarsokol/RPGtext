@@ -9,7 +9,6 @@ def new_game():
     race = menu_choose_race()
     dict = class_choise()
     dict['race'] = race
-    print(dict)
     return dict
 
 

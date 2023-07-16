@@ -7,22 +7,22 @@ from random_func import *
 
 
 
-def choise_1(list): # начальное действие в пещере
+def choise_1(dict): # начальное действие в пещере
     choose_1_0()
     data = input('enter number: ')
     if data == "1":
         choose_1_1()
         sleep(3)
-        start_add_weapon(list)
+        start_add_weapon(dict)
         print('>Больше здесь делать нечего. Вы возвращаетесь к лучу света.')
-        return choise_1_2(list)
+        return choise_1_2(dict)
     elif data == "2":
         choose_1_2()
         return 1
     elif data == "3":
         choose_1_3()
 
-def choise_1_2(list): # начальное действие в пещере
+def choise_1_2(dict): # начальное действие в пещере
     print('-'*80)
     print('Выберите действие:\n'
           '>пройти туда,откуда дует ветер (1)\n'
@@ -31,13 +31,12 @@ def choise_1_2(list): # начальное действие в пещере
     data = input('enter number: ')
     if data == "1":
         choose_1_2()
-        print(list)
-        return list
+        return dict
     elif data == "2":
         choose_1_3()
 
 
-def location_cave(list):
+def location_cave(dict):
     # cave_intro()
-    choise_1(list)
+    choise_1(dict)
 

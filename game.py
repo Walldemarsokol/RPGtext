@@ -16,9 +16,10 @@ def first_location(char_class):
     location_cave(char_class)
     return char_class
 
-def second_location(list):
+def second_location(char_class):
     pass
 
 result_1 = start_game()
+
 first_location(result_1)
 
