@@ -1,9 +1,86 @@
 from chapter_1_texts import *
+from random import *
 from character import *
 from classes import *
 from game_over import game_over_loose
 from write_function import *
 from random_func import *
+
+
+
+# def remains_event_1_lvl(dict):
+#     weapon = dict.get('weapon')
+#     hero = dict.get('class')
+#     body = ['оркa','гномa','эльфа','челвека']
+#     body_random = randint(0,4)
+#     if weapon == None:
+#         print(f'Вы обнаружили останки гуманоида. Это был {hero}. Вы нашли чудом уцелевшее оружие.')
+#         start_add_weapon(dict)
+#         print("Вы идете дальше. Настроение немного прибавилось.")
+#     else:
+#         print(f'{body_random}Вы обнаружили останки {body[body_random]}. Вокруг только сгнившее оружие и куча паутины.\n '
+#               'Вы просто идете дальше...')
+
+
+def random_travel(dict):
+    """Функция для движения персонажа"""
+    move = randint(0,21)
+    weapon = dict.get('weapon')
+    dock_event = dict.get('doctor_who')
+    if move >= 0 and move <= 3:
+        if weapon == None:
+            remains_event_1_lvl(dict)
+            sleep(3)
+            print('-' * 20)
+            return random_travel(dict)
+        else:
+            print('>>Вы двигаетесь вдоль пещеры. Кажется на вас кто-то смотрит. Вас не покидает чувство\n'
+              'что за Вами следят.')
+            sleep(2)
+            print('-'*20)
+            return random_travel(dict)
+    elif move >= 4 and move <=7:
+        print('>>Вы двигаетесь вдоль пещеры. Слышны странные шорохи в темноте. Вас не покидает чувство\n'
+              'что за Вами следят.')
+        sleep(2)
+        print('-' * 20)
+        random_travel(dict)
+    elif move >=8 and move <=10:
+        print('>>Вы споткнулиcь и чуть не ушибли голову о камень...Будьте осторожнее!')
+        sleep(2)
+        print('-'*20)
+        return random_travel(dict)
+    elif move ==11:
+        if dock_event == 'yes':
+            print('В дали Вы видите необычное свечение. Подойдя ближе это оказывается необычная на вид синяя будка. \n'
+              'По виду она сделана из дерева. Вы осматриваете надписи на ней: "Police box". \n'
+              'Что бы это значило..? Будка издает странный звук и начинаем мигать. Через пару секунд она пропадает\n'
+              'словно ничего и не было. Что это такое?!..\n'
+              ' Пещеру снова наполняет тьма...Опять глазам нужно привыкнуть к темноте.. ')
+            dict.pop('doctor_who')
+            sleep(10)
+            return random_travel(dict)
+        else:
+            print('Вы идете и не замечаете ничего необычного..')
+            sleep(2)
+            print("-" * 20)
+            return random_travel(dict)
+    elif move >=12 and move <=19:
+        print('Вы идете и спотыкаетесь. Еще бы чуть чуть и потеряли бы глаз...')
+        sleep(2)
+        print("-"*20)
+        return random_travel(dict)
+    elif move == 20:
+        data=input('Вы обнаружили спуск. Судя по всему там ниже есть что-то интересное...\n'
+              'Хотите спуститься? \n <<Yes(1)>>  <<No(2)>>')
+        if data == '1':
+            return
+        elif data == '2':
+            print('Вы решили поискать другой путь и возвращаетесь в попытке найти проход.')
+            return random_travel(dict)
+
+
+
 
 
 
@@ -36,5 +113,7 @@ def choise_1_2(dict): # начальное действие в пещере
 
 def location_cave(dict):
     # cave_intro()
+    random_travel(dict)
     choise_1(dict)
+
 
