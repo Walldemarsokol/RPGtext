@@ -9,6 +9,7 @@ def random_choice(a, b):
 
 
 def remains_event_1_lvl(dict):
+    """Функция генерирует ивент нахождения оружия,если нет его в инвентаре. И создает видимость окружения"""
     weapon = dict.get('weapon')
     hero = dict.get('class')
     body = ['оркa','гномa','эльфа','челвека']
